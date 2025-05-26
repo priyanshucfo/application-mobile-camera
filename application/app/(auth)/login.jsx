@@ -18,12 +18,7 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Basic validation
-    if (!email || !password) return alert('Please enter email and password');
-    // API Call here
-    alert('Login successful (mock)');
-    // router.replace('/(drawer)');
-    // router.replace('/home'); <-- Navigate to home/dashboard after login
+    router.replace('/(drawer)/(tabs)/dashboard');
   };
 
   return (

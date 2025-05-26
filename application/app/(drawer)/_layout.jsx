@@ -1,15 +1,34 @@
+import React from 'react';
 import { Drawer } from 'expo-router/drawer';
+import { Ionicons } from '@expo/vector-icons';
+
 export default function DrawerLayout() {
   return (
-    <Drawer>
+    <Drawer
+      screenOptions={{
+        drawerActiveTintColor: '#6200EE',
+        drawerLabelStyle: { fontSize: 16, fontWeight: '600' },
+        drawerStyle: { backgroundColor: '#f2f2f2' },
+      }}
+    >
       <Drawer.Screen
         name="(tabs)"
-        options={{ title: 'Home', drawerLabel: 'Home' }}
+        options={{
+          title: 'Home',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
+          ),
+        }}
       />
-      <Drawer.Screen name="bookings" options={{ title: 'Bookings' , drawerLabel: 'Home' }} />
-      <Drawer.Screen name="profile" options={{ title: 'Profile' , drawerLabel: 'Home1' }} />
-      <Drawer.Screen name="settings" options={{ title: 'Settings' , drawerLabel: 'Home2' }} />
-      <Drawer.Screen name="support" options={{ title: 'Support' , drawerLabel: 'Home3' }} />
+      <Drawer.Screen
+        name="settings"
+        options={{
+          title: 'Settings',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="settings-outline" size={size} color={color} />
+          ),
+        }}
+      />
     </Drawer>
   );
 }
