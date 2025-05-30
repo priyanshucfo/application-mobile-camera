@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function Favourites() {
+export default function Messages() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Favourites Screen</Text>
+      <Text style={styles.text}>Chats Screen</Text>
     </View>
   );
 }

@@ -12,8 +12,8 @@ import {
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 
 const user = {
-  name: 'John Doe',
-  email: 'john.doe@example.com',
+  name: 'Priyanshu',
+  email: 'priyanshujha022@gmail.com',
   avatar: 'https://i.pravatar.cc/150?img=3',
 };
 
@@ -22,23 +22,51 @@ export default function DrawerLayout() {
     <Drawer
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       screenOptions={{
-        drawerActiveTintColor: '#4B47FF',
+        drawerActiveTintColor: 'green',
         drawerInactiveTintColor: '#444',
         drawerLabelStyle: { fontSize: 15, fontWeight: '600' },
         drawerStyle: {
-          backgroundColor: '#fff',
-          borderTopRightRadius: 20,
-          borderBottomRightRadius: 20,
+          backgroundColor: '#f9f9f9',
+          borderTopRightRadius: 0,
+          borderBottomRightRadius: 0,
           width: 300,
         },
       }}
     >
+      
       <Drawer.Screen
         name="(tabs)"
         options={{
-          title: 'Home',
+          title: 'Dashboard',
           drawerIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="payment"
+        options={{
+          title: 'Payments',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="card-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="announcements"
+        options={{
+          title: 'Announcements',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="notifications-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="termsandpolicies"
+        options={{
+          title: 'Terms And Policies',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="reader-outline" size={size} color={color} />
           ),
         }}
       />
@@ -48,6 +76,15 @@ export default function DrawerLayout() {
           title: 'Settings',
           drawerIcon: ({ color, size }) => (
             <Ionicons name="settings-outline" size={size} color={color} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="helpcenter"
+        options={{
+          title: 'Help Center',
+          drawerIcon: ({ color, size }) => (
+            <Ionicons name="help-circle-outline" size={size} color={color} />
           ),
         }}
       />
@@ -95,7 +132,7 @@ const styles = StyleSheet.create({
   profileWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 25,
+    paddingVertical: 20,
     paddingHorizontal: 20,
     backgroundColor: '#f9f9f9',
     borderBottomWidth: 1,
@@ -124,9 +161,8 @@ const styles = StyleSheet.create({
   },
   divider: {
     height: 1,
-    backgroundColor: '#e2e2e2',
-    marginHorizontal: 20,
-    marginBottom: 4,
+    marginHorizontal: 0,
+    marginBottom: 5,
   },
   footer: {
     padding: 20,
